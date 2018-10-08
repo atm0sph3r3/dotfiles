@@ -24,3 +24,12 @@ if [ -f `which powerline-daemon` ]; then
   POWERLINE_BASH_SELECT=1
   . /usr/share/powerline/bash/powerline.sh
 fi
+
+# start ssh-agent and add ssh key 
+eval "$(ssh-agent -s)"
+
+if [[ "$(uname -a)" =~ ^Darwin.+ ]]; then
+  ssh-add -K $HOME/.ssh/id_rsa
+else
+  ssh-add $HOME/.ssh/id_rsa
+fi
