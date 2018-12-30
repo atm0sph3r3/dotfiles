@@ -17,6 +17,10 @@ if [ -f $HOME/.bash_functions ]; then
   . $HOME/.bash_functions
 fi
 
+if [ -f $HOME/.bash_envvars ]; then
+  . $HOME/.bash_envvars
+fi
+
 # Use Powerline
 if [ -f "$(which powerline-daemon)" ]; then
   powerline-daemon -q
