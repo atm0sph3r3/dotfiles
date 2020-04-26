@@ -1,2 +1,2 @@
 # configuration-files
-Personal configuration files for applications such as bash and tmux
+Personal configuration files for applications such as bash and tmux using Chezmoi
