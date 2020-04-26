@@ -1,4 +1,0 @@
-# .bash_aliases
-
-alias ll='ls -la'
-alias mci='mvn clean install'
