@@ -1,0 +1,4 @@
+# .bash_functions
+function set_aws_profile {
+  export AWS_PROFILE=$1
+}
