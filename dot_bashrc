@@ -1,0 +1,39 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -f $HOME/.bash_aliases ]; then
+  . $HOME/.bash_aliases
+fi
+
+if [ -f $HOME/.bash_functions ]; then
+  . $HOME/.bash_functions
+fi
+
+if [ -f $HOME/.bash_envvars ]; then
+  . $HOME/.bash_envvars
+fi
+
+# Use Powerline
+if [ -f "$(which powerline-daemon)" ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
+
+# start ssh-agent and add ssh key 
+eval "$(ssh-agent -s)"
+
+if [[ "$(uname -a)" =~ ^Darwin.+ ]]; then
+  ssh-add -K $HOME/.ssh/id_rsa
+else
+  ssh-add $HOME/.ssh/id_rsa
+fi
