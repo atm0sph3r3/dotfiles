@@ -3,3 +3,7 @@
 alias ll='ls -la'
 alias mci='mvn clean install'
 alias gs='git status'
+alias cz='chezmoi'
+alias cze='chezmoi edit'
+alias cza='chezmoi apply'
+alias czd='chezmoi diff'
