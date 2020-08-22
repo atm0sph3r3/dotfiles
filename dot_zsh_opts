@@ -1,0 +1,3 @@
+# history
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE

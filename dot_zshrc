@@ -21,6 +21,10 @@ if [ -f $HOME/.bash_envvars ]; then
   . $HOME/.bash_envvars
 fi
 
+if [ -f $HOME/.zsh_opts ]; then
+  . $HOME/.zsh_opts
+fi
+
 # Use Powerline
 if [ -f "$(which powerline-daemon)" ]; then
   powerline-daemon -q
