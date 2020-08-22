@@ -42,5 +42,6 @@ else
   ssh-add $HOME/.ssh/id_rsa
 fi
 
+autoload -Uz bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 complete -C '/usr/local/bin/aws_completer' aws
