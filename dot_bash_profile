@@ -6,7 +6,5 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin:$HOME/.cargo/bin:$HOME/arcanist/bin:/usr/local/bin
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/Library/Python/2.7/bin:$HOME/Library/Python/3.7/bin:$HOME/.cargo/bin:$HOME/arcanist/bin:/usr/local/bin:/opt/mssql-tools/bin
 export PATH
-
-export PATH="$HOME/.cargo/bin:$PATH"

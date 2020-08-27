@@ -4,3 +4,15 @@ command = list
 [appgateway]
 command = network application-gateway
 
+[ls-account]
+command = account list -o table
+
+[set-account {{ subId }}]
+command = account set -s {{ subId }}
+
+[add-sql-fwrule {{ name }} {{ ip }} {{ server }} {{ rg }}]
+command = sql server firewall-rule create --name {{ name }} --start-ip-address {{ ip }} --end-ip-address {{ ip }} --server {{ server }} -g {{ rg}}
+
+[whoami]
+command = ad signed-in-user show --query objectId
+
