@@ -16,3 +16,6 @@ command = sql server firewall-rule create --name {{ name }} --start-ip-address {
 [whoami]
 command = ad signed-in-user show --query objectId
 
+[kv]
+command = keyvault
+
