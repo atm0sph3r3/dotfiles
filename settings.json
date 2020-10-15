@@ -1,0 +1,6 @@
+{
+    "files.autoSave": "onFocusChange",
+    "window.zoomLevel": 0,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.colorTheme": "Atom One Dark"
+}
