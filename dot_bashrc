@@ -134,9 +134,24 @@ if [ -f "$(which powerline-daemon)" ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+  . /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
 # SSH
 eval "$(ssh-agent -s)"
 ssh-add $HOME/.ssh/id_rsa
+
+# bash parameter completion for the dotnet CLI
+_dotnet_bash_complete() {
+  local word=${COMP_WORDS[COMP_CWORD]}
+
+  local completions
+  completions="$(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)"
+  if [ $? -ne 0  ]; then
+     completions=""
+  fi
+
+  COMPREPLY=( $(compgen -W "$completions" -- "$word")  )
+}
+
+complete -f -F _dotnet_bash_complete dotnet
